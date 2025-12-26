@@ -1,14 +1,24 @@
+using System;
+
 namespace DesafioPOO.Models
 {
     public abstract class Smartphone
     {
+        // Propriedade pública
         public string Numero { get; set; }
-        // TODO: Implementar as propriedades faltantes de acordo com o diagrama
+        
+        // Propriedades privadas (Encapsulamento) conforme costuma ser pedido neste desafio
+        private string Modelo;
+        private string IMEI;
+        private int Memoria;
 
-        public Smartphone(string numero)
+        public Smartphone(string numero, string modelo, string imei, int memoria)
         {
-            Numero = numero;
             // TODO: Passar os parâmetros do construtor para as propriedades
+            Numero = numero;
+            Modelo = modelo;
+            IMEI = imei;
+            Memoria = memoria;
         }
 
         public void Ligar()
@@ -21,6 +31,7 @@ namespace DesafioPOO.Models
             Console.WriteLine("Recebendo ligação...");
         }
 
+        // TODO: Declarar o método abstrato InstalarAplicativo
         public abstract void InstalarAplicativo(string nomeApp);
     }
 }
